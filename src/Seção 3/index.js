@@ -8,14 +8,26 @@ import icon from '../img/tf.png';
 export default function SectionTwo() {
   const [ text, setText ] = useState('');
 
-  const handleSubmitButtonClick = () => {
+  const handleFillFunction = () => {
     //função fill para inicialização de elementos
-    const fill0 = tf.fill([ 1 ], 0);
-    const fill1 = tf.fill([ 2, 2 ], 1);
+    const fill1 = tf.fill([ 1 ], 0);
+    const fill2 = tf.fill([ 2, 2 ], 1);
 
     const result = 
-      `Função fill: \n${ fill0 }\n\n` +
-      `Segunda função fill: \n${ fill1 }\n\n`
+      `Função fill: \n${ fill1 }\n\n` +
+      `Segunda função fill: \n${ fill2 }\n\n`
+
+    setText(result);
+  };
+
+  const handleZerosFunction = () => {
+    //função zeros para atribuir zeros ao tensor
+    const zeros1 = tf.zeros([1]);
+    const zeros2 = tf.zeros([1, 1, 15, 15]);
+
+    const result = 
+      `Função zeros: \n${ zeros1 }\n\n` + 
+      `Segunda função zeros: \n${ zeros2 }\n\n`
 
     setText(result);
   };
@@ -35,7 +47,7 @@ export default function SectionTwo() {
           spellCheck='false' 
         />
         <SubmitButton
-          onClick={ handleSubmitButtonClick }
+          onClick={ handleZerosFunction }
         >
           Executar
         </SubmitButton>
