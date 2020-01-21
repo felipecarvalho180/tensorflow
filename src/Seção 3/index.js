@@ -32,6 +32,18 @@ export default function SectionTwo() {
     setText(result);
   };
 
+  const handleOnesFunction = () => {
+    //função ones para atribuir uns ao tensor
+    const ones1 = tf.ones([1]);
+    const ones2 = tf.ones([1, 1, 15, 15]);
+
+    const result = 
+      `Função ones: \n${ ones1 }\n\n` + 
+      `Segunda função ones: \n${ ones2 }\n\n`
+
+    setText(result);
+  };
+
   return (
     <Wrapper>
       <Header>
@@ -47,7 +59,7 @@ export default function SectionTwo() {
           spellCheck='false' 
         />
         <SubmitButton
-          onClick={ handleZerosFunction }
+          onClick={ handleOnesFunction }
         >
           Executar
         </SubmitButton>
