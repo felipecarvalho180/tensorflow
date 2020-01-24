@@ -44,6 +44,20 @@ export default function SectionTwo() {
     setText(result);
   };
 
+  const handleLinspaceFunction = () => {
+    //função linspace para iniciar e terminar elementos
+    const linspace1 = tf.linspace(0, 9, 10);
+    const linspace2 = tf.linspace(1, 10, 5);
+    const linspace3 = tf.linspace(1, 10, 20);
+
+    const result = 
+      `Função linspace: \n${ linspace1 }\n\n` + 
+      `Segunda função linspace: \n${ linspace2 }\n\n` + 
+      `Terceira função linspace: \n${ linspace3 }\n\n`
+
+    setText(result);
+  };
+
   return (
     <Wrapper>
       <Header>
@@ -59,7 +73,7 @@ export default function SectionTwo() {
           spellCheck='false' 
         />
         <SubmitButton
-          onClick={ handleOnesFunction }
+          onClick={ handleLinspaceFunction }
         >
           Executar
         </SubmitButton>
