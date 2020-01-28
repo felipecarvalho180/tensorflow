@@ -32,6 +32,46 @@ export default function SectionTwo() {
     setText(result);
   };
 
+  const handleOnesFunction = () => {
+    //função ones para atribuir uns ao tensor
+    const ones1 = tf.ones([1]);
+    const ones2 = tf.ones([1, 1, 15, 15]);
+
+    const result = 
+      `Função ones: \n${ ones1 }\n\n` + 
+      `Segunda função ones: \n${ ones2 }\n\n`
+
+    setText(result);
+  };
+
+  const handleLinspaceFunction = () => {
+    //função linspace para iniciar e terminar elementos
+    const linspace1 = tf.linspace(0, 9, 10);
+    const linspace2 = tf.linspace(1, 10, 5);
+    const linspace3 = tf.linspace(1, 10, 20);
+
+    const result = 
+      `Função linspace: \n${ linspace1 }\n\n` + 
+      `Segunda função linspace: \n${ linspace2 }\n\n` + 
+      `Terceira função linspace: \n${ linspace3 }\n\n`
+
+    setText(result);
+  };
+
+  const handleRangeFunction = () => {
+    //função linspace para sequencias numéricas controladas
+    const range1 = tf.range(1, 11, 1);
+    const range2 = tf.range(0, 21, 4);
+    const range3 = tf.range(0, 20, 4);
+
+    const result = 
+      `Função range: \n${ range1 }\n\n` + 
+      `Segunda função range: \n${ range2 }\n\n` + 
+      `Terceira função range: \n${ range3 }\n\n`
+
+    setText(result);
+  };
+
   return (
     <Wrapper>
       <Header>
@@ -47,7 +87,7 @@ export default function SectionTwo() {
           spellCheck='false' 
         />
         <SubmitButton
-          onClick={ handleZerosFunction }
+          onClick={ handleRangeFunction }
         >
           Executar
         </SubmitButton>
