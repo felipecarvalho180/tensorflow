@@ -7,6 +7,16 @@ import icon from '../img/tf.png';
 export default function SectionTwo() {
   const [ text, setText ] = useState('');
 
+  const handleOneDimensionToScalar = () => {
+    const tensor1 = tf.tensor1d([3]);
+    const asScalar = tensor1.asScalar();
+
+    const result = 
+      `Transformação de uma dimensão para scalar: \n${ asScalar }\n\n`;
+
+    setText(result);
+  }
+
   return (
     <Wrapper>
       <Header>
@@ -22,7 +32,7 @@ export default function SectionTwo() {
           spellCheck='false' 
         />
         <SubmitButton
-          // onClick={ handleRangeFunction }
+          onClick={ handleOneDimensionToScalar }
         >
           Executar
         </SubmitButton>
