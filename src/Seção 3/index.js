@@ -58,6 +58,20 @@ export default function SectionTwo() {
     setText(result);
   };
 
+  const handleRangeFunction = () => {
+    //função linspace para sequencias numéricas controladas
+    const range1 = tf.range(1, 11, 1);
+    const range2 = tf.range(0, 21, 4);
+    const range3 = tf.range(0, 20, 4);
+
+    const result = 
+      `Função range: \n${ range1 }\n\n` + 
+      `Segunda função range: \n${ range2 }\n\n` + 
+      `Terceira função range: \n${ range3 }\n\n`
+
+    setText(result);
+  };
+
   return (
     <Wrapper>
       <Header>
@@ -73,7 +87,7 @@ export default function SectionTwo() {
           spellCheck='false' 
         />
         <SubmitButton
-          onClick={ handleLinspaceFunction }
+          onClick={ handleRangeFunction }
         >
           Executar
         </SubmitButton>
